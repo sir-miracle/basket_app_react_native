@@ -1,20 +1,27 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import WelcomeScreen from './screens/WelcomeScreen';
+import GetStartedScreen from './screens/GetStartedScreen';
+import LoginScreen from './screens/LoginScreen';
+import BottomTab from './screens/BottomTab';
+import { RootSiblingParent } from 'react-native-root-siblings';
+
 
 export default function App() {
+
+  const Stack = createNativeStackNavigator();
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <RootSiblingParent>
+    <NavigationContainer>
+      <Stack.Navigator  options={{ headerShown: false }}>
+        <Stack.Screen name="welcome" component={WelcomeScreen} options={{ headerShown: false }}/>
+        <Stack.Screen name="GetStartedScreen" component={GetStartedScreen} options={{ headerShown: false }}/>
+      <Stack.Screen name="LoginScreen" component={LoginScreen} options={{ headerShown: false }}/>
+      <Stack.Screen name="BottomTab" component={BottomTab} options={{ headerShown: false }}/>
+      </Stack.Navigator>
+    </NavigationContainer>
+    </RootSiblingParent>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+
