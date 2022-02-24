@@ -3,7 +3,7 @@ import React from 'react'
 
 const Cart = () => {
   return (
-    <View>
+    <View style={{alignItems:'center', marginTop: 200}}>
       <Text>Cart</Text>
     </View>
   )

@@ -1,10 +1,11 @@
-import { StyleSheet, Text, View, ImageBackground, Image,} from 'react-native'
+import {Text, View, ImageBackground, Image,} from 'react-native'
 import React from 'react'
 import BackgroundImage from '../assets/images/basketappbackground.jpeg'
 import Logo from '../assets/images/basketapplogo.png'
+import {welcomeScreenStyles} from '../styles'
 
 const WelcomeScreen = ({navigation}) => {
-
+    //this function navigates user to the  getStarted screen
     const goToGetStarted = () => {
         navigation.navigate('GetStartedScreen');
     };
@@ -17,24 +18,24 @@ const WelcomeScreen = ({navigation}) => {
             }}/>
             
            <View style={{position: 'absolute',  top: 0,  left: 0}}>
-            <View style={styles.logo}>
+            <View style={welcomeScreenStyles.logo}>
                     <Image
                         source={Logo}
                     />
                 </View>
-                <View style={ styles.middleWriteUp}>
-                    <Text style={styles.middleWriteUps}>Start Shopping</Text>
-                    <Text style={styles.middleWriteUps}>Stay Happy</Text>
-                    <Text style={styles.middleWriteUps}>Anytime</Text>
+                <View style={ welcomeScreenStyles.middleWriteUp}>
+                    <Text style={welcomeScreenStyles.middleWriteUps}>Start Shopping</Text>
+                    <Text style={welcomeScreenStyles.middleWriteUps}>Stay Happy</Text>
+                    <Text style={welcomeScreenStyles.middleWriteUps}>Anytime</Text>
                 </View>
 
-                <View style={styles.BOmarketplaceView}>
-                    <Text style={styles.BOmarketplaceText}>Basket Online marketplace</Text>
+                <View style={welcomeScreenStyles.BOmarketplaceView}>
+                    <Text style={welcomeScreenStyles.BOmarketplaceText}>Basket Online marketplace</Text>
                 </View>
 
-                <View style={styles.bottomView}>
-                    <Text style={styles.skip}>Skip</Text>
-                    <Text style={styles.next} onPress={goToGetStarted}>Next</Text>
+                <View style={welcomeScreenStyles.bottomView}>
+                    <Text style={welcomeScreenStyles.skip}>Skip</Text>
+                    <Text style={welcomeScreenStyles.next} onPress={goToGetStarted}>Next</Text>
                 </View>
                 </View>
         </View>
@@ -44,62 +45,3 @@ const WelcomeScreen = ({navigation}) => {
 
 export default WelcomeScreen;
 
-const styles = StyleSheet.create({
-    logo:{
-        marginTop: 200,
-        alignItems:'center',
-    },
-    middleWriteUp:{
-        alignItems: 'center',
-        marginTop: 16,
-    },
-    middleWriteUps:{
-        color: '#FFFFFF',
-        fontSize: 35,
-        fontStyle:'normal',
-        lineHeight: 42.63,
-        fontWeight: '400',
-        //fontFamily: 'Raza'
-    },
-    BOmarketplaceView:{
-        alignItems:'center',
-        marginTop: 150,
-    },
-    BOmarketplaceText:{
-        color: '#FF8137',
-        fontWeight: '700',
-        fontSize: 25,
-        fontStyle:'normal',
-        lineHeight: 30.45,
-        //fontFamily: 'Raza'
-    },
-    bottomView:{
-        flexDirection: 'row',
-        width:'95%',
-        maxWidth:'95%',
-        marginLeft:10, 
-        alignItems:'center'
-    },
-    next:{
-        color: '#FF8137',
-        fontWeight: '700',
-        fontSize: 25,
-        fontStyle:'normal',
-        lineHeight: 30.45,
-        marginLeft: 250,
-        marginTop: 30,
-        alignItems:'flex-end',
-        marginRight: 20,
-        //fontFamily: 'Raza' 
-    },
-    skip:{
-        color: '#FF8137',
-        fontWeight: '700',
-        fontSize: 25,
-        fontStyle:'normal',
-        lineHeight: 30.45,
-        marginTop: 30,
-        //fontFamily: 'Raza'
-    },
-
-})

@@ -3,7 +3,7 @@ import React from 'react'
 
 const Home = () => {
   return (
-    <View>
+    <View style={{alignItems:'center', marginTop: 200}}>
       <Text>Home</Text>
     </View>
   )
